@@ -1,0 +1,9 @@
+version: '3'
+services:
+  redis-server:
+    image: 'redis:alpine'
+    command: ["redis-server", "--bind", "redis", "--port", "6379"]
+  node-app:
+    build: .
+    ports:
+      - '8081:8081'
